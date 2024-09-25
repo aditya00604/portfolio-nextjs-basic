@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-      <main className="flex min-h-screen flex-col items-center justify-between bg-black m-0">
+      <main className="flex  min-h-screen flex-col items-center justify-between bg-black m-0 p-0">
         
         {children}
       {/* <div className="fixed bottom-0 left-[-10%] overflow-hidden shadow-lg filter grayscale p-0 m-0">

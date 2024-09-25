@@ -46,7 +46,7 @@ export default function Home() {
           </div>
 
           {/* Futuristic 3D Panels */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-10 text-white text-lg hologram-container bg-black">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-10 text-white text-lg hologram-container ">
             {/* Languages */}
             <div className="hologram-panel">
               <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">

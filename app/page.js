@@ -82,7 +82,8 @@ export default function Home() {
   <img src="./Adi-transformed.png" alt="Aditya Kumar Mishra" width={450} height={450} className="" />
   <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black to-transparent opacity-100"></div>
 </div >
-          <div className="text-white text-lg sm:text-xl md:text-2xl md:mt-6 mb-5 sm:mt-10">
+          <div className="relative text-white  text-lg sm:text-xl md:text-2xl md:mt-6 mb-5 sm:mt-10">
+          
             <p className="italic animate-fadeIn text-lg sm:text-xl md:text-2xl">
               <span className="text-[#f39c12] font-bold">"Coding is my way of telling stories"</span>. 
               I see myself as a <span className="text-[#61dafb] font-bold">storyteller</span> for <span className="text-[#61dafb] font-bold">computers</span>.
@@ -95,6 +96,7 @@ export default function Home() {
               Coding lets me <span className="font-bold text-[#61dafb]">create solutions</span> and build experiences that people can enjoy, 
               bringing my ideas to life.
             </p>
+            
           </div>
         </div>
       </div>

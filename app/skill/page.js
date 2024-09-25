@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <>
       <div id="particles-js" className="fixed inset-0 z-0 min-h-full"></div>
-      <div className="z-10 flex flex-col items-end justify-center w-full min-h-full  mt-5">
+      <div className="z-10 flex flex-col items-end justify-center w-full min-h-full  mt-5 mb-5 p-0 ">
         <div className="flex flex-col text-white items-start w-full md:w-[50%] mb-20">
           <div className="flex  md:flex-row items-start pt-10 md:pt-20">
             <span className="text-7xl md:text-9xl font-bold text-[#61dafb]">A</span>
@@ -113,8 +113,8 @@ export default function Home() {
 
           {/* Horizontal Bar Chart for Proficiency */}
           <div className="w-full mt-10 mb-20 ">
-            <h2 className="text-2xl text-white font-bold mb-5">Programming Languages Proficiency</h2>
-            <div className="space-y-4 mr-20">
+            <h2 className="text-2xl text-white font-bold mb-5 ml-20 md:ml-0">Programming Languages Proficiency</h2>
+            <div className="space-y-4 md:mr-20 ml-20 md:ml-0 mr-10 ">
 
               {/* C++ Proficiency */}
               <div className="flex items-center space-x-3">

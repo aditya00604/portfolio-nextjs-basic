@@ -70,7 +70,7 @@ export default function Home() {
           </div>
 
           {/* Project Showcase */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {projects.map((project, index) => (
               <div key={index} className="bg-[#1e1e1e] border border-gray-600 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
                 <h2 className="text-2xl sm:text-3xl font-semibold text-[#61dafb]">{project.title}</h2>

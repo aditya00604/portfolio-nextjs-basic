@@ -79,7 +79,7 @@ export default function Home() {
           </div>
       
           <div className="md:hidden block grayscale  relative">
-  <img src="/Adi-transformed.png" alt="Aditya Kumar Mishra" width={450} height={450} className="" />
+  <img src="./Adi-transformed.png" alt="Aditya Kumar Mishra" width={450} height={450} className="" />
   <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black to-transparent opacity-100"></div>
 </div >
           <div className="text-white text-lg sm:text-xl md:text-2xl md:mt-6 mb-5 sm:mt-10">

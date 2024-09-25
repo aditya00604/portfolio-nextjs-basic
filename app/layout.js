@@ -14,17 +14,23 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-      <main className="flex  min-h-screen flex-col items-center justify-between bg-black m-0 p-0">
-        
-        {children}
-      {/* <div className="fixed bottom-0 left-[-10%] overflow-hidden shadow-lg filter grayscale p-0 m-0">
-        <Image src="/Adi-transformed.png" alt="Hero" width={1100} height={1100} />
-      </div> */}
-       <div className="hidden md:block fixed bottom-0 left-[-10%] overflow-hidden shadow-lg filter grayscale p-0 m-0">
-        <img src="./Adi-transformed.png" alt="Hero" width={1100} height={1100} />
-      </div>
-      <FloatingDockDemo />
-    </main>
+        <main className="flex min-h-screen flex-col items-center justify-between bg-black m-0 p-0">
+          {children}
+
+          {/* Desktop image */}
+          <div className="hidden md:block fixed bottom-0 left-[-10%] overflow-hidden shadow-lg filter grayscale p-0 m-0">
+            <img
+              src="./Adi-transformed.png"
+              alt="Hero"
+              width={1100}
+              height={1100}
+              draggable="false"
+              style={{ userSelect: "none", pointerEvents: "none" }}
+            />
+          </div>
+
+          <FloatingDockDemo />
+        </main>
       </body>
     </html>
   );

@@ -4,22 +4,23 @@ import emailjs from 'emailjs-com'; // For email sending
 import { IconBrandGithub, IconBrandLinkedin, IconBrandTwitter } from '@tabler/icons-react'; // Import Tabler Icons
 
 export default function Home() {
-  // Form state for capturing user input
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSent, setIsSent] = useState(false);
   const [error, setError] = useState(false);
 
-  // Handle form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevData => ({ ...prevData, [name]: value }));
   };
 
-  // Handle form submission
   const sendEmail = (e) => {
     e.preventDefault();
-    
-    emailjs.send('service_hxak5gg', 'template_o683qhw', formData, '4UQNcgdyRQxIoaOgT')
+    emailjs.send(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      formData,
+      process.env.REACT_APP_EMAILJS_USER_ID
+    )
       .then((response) => {
         setIsSent(true);
         setError(false);
@@ -30,16 +31,12 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // Dynamically load particles.js
     const scriptParticles = document.createElement('script');
     scriptParticles.src = "https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js";
-    
-    // Dynamically load Stats.js
     const scriptStats = document.createElement('script');
-    scriptStats.src = "https://cdnjs.cloudflare.com/ajax/libs/stats.js/r17/Stats.min.js"; 
+    scriptStats.src = "https://cdnjs.cloudflare.com/ajax/libs/stats.js/r17/Stats.min.js";
 
     scriptParticles.onload = () => {
-      // Initialize particles.js
       particlesJS("particles-js", {
         "particles": {
           "number": { "value": 8, "density": { "enable": false, "value_area": 1683.58 } },
@@ -54,7 +51,6 @@ export default function Home() {
         "retina_detect": true
       });
 
-      // Initialize Stats.js after particles.js is loaded
       scriptStats.onload = () => {
         if (typeof Stats !== 'undefined') {
           var stats = new Stats();
@@ -78,31 +74,31 @@ export default function Home() {
           console.error("Stats is not available.");
         }
       };
-      document.body.appendChild(scriptStats); 
+      document.body.appendChild(scriptStats);
     };
 
-    document.body.appendChild(scriptParticles); 
+    document.body.appendChild(scriptParticles);
   }, []);
 
   return (
     <>
-      <div id="particles-js" className="fixed inset-0 z-0 h-full"></div> 
-      <div className="z-10 flex flex-col items-end justify-center w-full h-full mt-5">
-        <div className="flex flex-col text-white items-center w-[50%]">
+      <div id="particles-js" className="fixed inset-0 z-0 h-full min-h-full"></div> 
+      <div className="z-10 flex flex-col items-end  justify-center w-full min-h-full mt-5 px-4 md:px-0">
+        <div className="flex flex-col text-white items-center w-full  md:w-[50%] max-w-3xl mb-20 md:pr-9">
           <div className="flex flex-row items-center pt-20">
-            <span className="text-9xl font-bold text-[#61dafb]">A</span>
-            <span className="relative text-6xl font-bold  text-[#61dafb]">
-              ditya Kumar Mishra
+            <span className="text-6xl md:text-9xl font-bold text-[#61dafb]">A</span>
+            <span className="relative text-4xl md:text-6xl font-bold text-[#61dafb]">
+              ditya <span className="md:inline hidden">Kumar</span> Mishra
               <br />
-              <p className="absolute right-0 animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-5xl font-bold text-[#f39c12]">
+              <p className="absolute right-0 animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-0 md:pr-5 text-2xl md:text-5xl font-bold text-[#f39c12]">
                 Web Developer
               </p>
             </span>
           </div>
           
           {/* Contact Section */}
-          <div className="mt-10 glass-card p-8 rounded-lg backdrop-blur-lg shadow-lg">
-            <h2 className="text-3xl font-bold text-white mb-4">Contact Me</h2>
+          <div className="mt-8 glass-card p-6 md:p-8 rounded-lg backdrop-blur-lg shadow-lg w-full">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Contact Me</h2>
             <form onSubmit={sendEmail} className="flex flex-col space-y-4 w-full">
               <input
                 type="text"
@@ -110,7 +106,7 @@ export default function Home() {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your Name"
-                className="p-4 rounded bg-black/70 text-white border border-[#f39c12] hover:border-[#e67e22] transition-all duration-200"
+                className="p-3 md:p-4 rounded bg-black/70 text-white border border-[#f39c12] hover:border-[#e67e22] transition-all duration-200"
                 required
               />
               <input
@@ -119,7 +115,7 @@ export default function Home() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Your Email"
-                className="p-4 rounded bg-black/70 text-white border border-[#f39c12] hover:border-[#e67e22] transition-all duration-200"
+                className="p-3 md:p-4 rounded bg-black/70 text-white border border-[#f39c12] hover:border-[#e67e22] transition-all duration-200"
                 required
               />
               <textarea
@@ -128,7 +124,7 @@ export default function Home() {
                 onChange={handleChange}
                 placeholder="Your Message"
                 rows="4"
-                className="p-4 rounded bg-black/70 text-white border border-[#f39c12] hover:border-[#e67e22] transition-all duration-200"
+                className="p-3 md:p-4 rounded bg-black/70 text-white border border-[#f39c12] hover:border-[#e67e22] transition-all duration-200"
                 required
               />
               <button type="submit" className="bg-[#f39c12] hover:bg-[#e67e22] text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-200">
@@ -142,22 +138,22 @@ export default function Home() {
           </div>
 
           {/* Social Media Links */}
-          <div className="flex space-x-6 mt-10">
+          <div className="flex space-x-6 mt-8">
             <a href="https://github.com/aditya00604" target="_blank" rel="noopener noreferrer">
-              <IconBrandGithub size={48} stroke={1.5} className="text-white hover:text-[#f39c12] transition-all duration-200" />
+              <IconBrandGithub size={36} stroke={1.5} className="text-white hover:text-[#f39c12] transition-all duration-200" />
             </a>
             <a href="https://www.linkedin.com/in/aditya-mishra-692791240" target="_blank" rel="noopener noreferrer">
-              <IconBrandLinkedin size={48} stroke={1.5} className="text-white hover:text-[#f39c12] transition-all duration-200" />
+              <IconBrandLinkedin size={36} stroke={1.5} className="text-white hover:text-[#f39c12] transition-all duration-200" />
             </a>
             <a href="https://x.com/KumarAdity36279" target="_blank" rel="noopener noreferrer">
-              <IconBrandTwitter size={48} stroke={1.5} className="text-white hover:text-[#f39c12] transition-all duration-200" />
+              <IconBrandTwitter size={36} stroke={1.5} className="text-white hover:text-[#f39c12] transition-all duration-200" />
             </a>
           </div>
         </div>
       </div>
 
       <style jsx>{`
-        .glass-card {
+         .glass-card {
           background: rgba(255, 255, 255, 0.05);
           border: 1px solid rgba(255, 255, 255, 0.18);
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);

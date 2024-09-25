@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Image from "next/image";
 import { 
   IconCode, IconDatabase, IconTools, IconBrandReact, IconBrandNextjs, IconBrandNodejs, 
-  IconBrandJavascript, IconDeviceDesktopAnalytics, IconBrandGithub, IconBrain, IconLanguage 
+  IconBrandJavascript, IconDeviceDesktopAnalytics, IconBrandGithub, IconBrain, IconLanguage ,IconBook
 } from '@tabler/icons-react'; // Import icons from Tabler Icons
 
 export default function Home() {
@@ -33,7 +33,7 @@ export default function Home() {
     <>
       <div id="particles-js" className="fixed inset-0 z-0 min-h-full"></div>
       <div className="z-10 flex flex-col items-end justify-center w-full min-h-full  mt-5">
-        <div className="flex flex-col text-white items-start w-full md:w-[50%]">
+        <div className="flex flex-col text-white items-start w-full md:w-[50%] mb-20">
           <div className="flex  md:flex-row items-start pt-10 md:pt-20">
             <span className="text-7xl md:text-9xl font-bold text-[#61dafb]">A</span>
             <span className="relative text-5xl md:text-6xl font-bold mt-2 pt-2 text-[#61dafb]">
@@ -45,9 +45,15 @@ export default function Home() {
             </span>
           </div>
 
-          {/* Futuristic 3D Panels */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-10 text-white text-lg hologram-container ">
-            {/* Languages */}
+            
+            <div className="hologram-panel">
+              
+                <IconBook size={48} stroke={1.5} />
+             
+              <p className="mt-2">CS Fundamental</p>
+              <span className="text-sm">Operating System,Computer Networks, DBMS, OOPS,Cloud Computing</span>
+            </div>
             <div className="hologram-panel">
               <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
                 <IconCode size={48} stroke={1.5} />
@@ -56,7 +62,6 @@ export default function Home() {
               <span className="text-sm">C++, JavaScript, Python, SQL</span>
             </div>
 
-            {/* Frameworks */}
             <div className="hologram-panel">
               <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
                 <IconBrandReact size={48} stroke={1.5} />
@@ -65,7 +70,6 @@ export default function Home() {
               <span className="text-sm">Next.js, Express.js, Django, Flask ,Bootstrap</span>
             </div>
 
-            {/* Libraries */}
             <div className="hologram-panel">
               <a href="https://pandas.pydata.org/" target="_blank" rel="noopener noreferrer">
                 <IconTools size={48} stroke={1.5} />
@@ -74,7 +78,6 @@ export default function Home() {
               <span className="text-sm">React.js, Pandas, TensorFlow, Prisma ORM, Redux</span>
             </div>
 
-            {/* Databases */}
             <div className="hologram-panel">
               <a href="https://www.mongodb.com" target="_blank" rel="noopener noreferrer">
                 <IconDatabase size={48} stroke={1.5} />
@@ -83,7 +86,6 @@ export default function Home() {
               <span className="text-sm">MySQL, Firebase, MongoDB, PostgreSQL</span>
             </div>
 
-            {/* Machine Learning */}
             <div className="hologram-panel">
               <a href="https://www.tensorflow.org/" target="_blank" rel="noopener noreferrer">
                 <IconBrain size={48} stroke={1.5} />
@@ -92,32 +94,14 @@ export default function Home() {
               <span className="text-sm">TensorFlow, Numpy, Scikit-learn, Pandas, Matplotlib, YOLO</span>
             </div>
 
-            {/* JavaScript */}
-            <div className="hologram-panel">
-              <a href="https://javascript.info/" target="_blank" rel="noopener noreferrer">
-                <IconBrandJavascript size={48} stroke={1.5} />
-              </a>
-              <p className="mt-2">JavaScript</p>
-              <span className="text-sm">Proficient in JavaScript, including ES6+</span>
-            </div>
+            
 
-            {/* GitHub */}
-            <div className="hologram-panel">
-              <a href="https://github.com/aditya00604" target="_blank" rel="noopener noreferrer">
-                <IconBrandGithub size={48} stroke={1.5} />
-              </a>
-              <p className="mt-2">GitHub</p>
-              <span className="text-sm">Explore my repositories</span>
-            </div>
-
-            {/* Interpersonal Skills */}
             <div className="hologram-panel">
               <IconDeviceDesktopAnalytics size={48} stroke={1.5} />
               <p className="mt-2">Interpersonal Skills</p>
               <span className="text-sm">Time Management, Collaboration, Communication</span>
             </div>
 
-            {/* Speaking Languages */}
             <div className="hologram-panel">
               <IconLanguage size={48} stroke={1.5} />
               <p className="mt-2">Languages Spoken</p>
@@ -126,11 +110,61 @@ export default function Home() {
               </span>
             </div>
           </div>
+
+          {/* Horizontal Bar Chart for Proficiency */}
+          <div className="w-full mt-10 mb-20 ">
+            <h2 className="text-2xl text-white font-bold mb-5">Programming Languages Proficiency</h2>
+            <div className="space-y-4 mr-20">
+
+              {/* C++ Proficiency */}
+              <div className="flex items-center space-x-3">
+                <span className="text-white font-semibold">C++</span>
+                <div className="w-full h-5 bg-gray-200 rounded-full">
+                  <div className="bg-[#61dafb] h-full rounded-full" style={{ width: '90%' }}></div>
+                </div>
+                <span className="text-white font-semibold">9/10</span>
+              </div>
+             
+
+
+              {/* JavaScript Proficiency */}
+              <div className="flex items-center space-x-3">
+                <span className="text-white font-semibold">JavaScript</span>
+                <div className="w-full h-5 bg-gray-200 rounded-full">
+                  <div className="bg-[#f39c12] h-full rounded-full" style={{ width: '85%' }}></div>
+                </div>
+                <span className="text-white font-semibold">8.5/10</span>
+              </div>
+
+              {/* Python Proficiency */}
+              <div className="flex items-center space-x-3">
+                <span className="text-white font-semibold">Python</span>
+                <div className="w-full h-5 bg-gray-200 rounded-full">
+                  <div className="bg-[#4CAF50] h-full rounded-full" style={{ width: '80%' }}></div>
+                </div>
+                <span className="text-white font-semibold">8/10</span>
+              </div>
+
+              {/* SQL Proficiency */}
+              <div className="flex items-center space-x-3">
+                <span className="text-white font-semibold">SQL</span>
+                <div className="w-full h-5 bg-gray-200 rounded-full">
+                  <div className="bg-[#9b59b6] h-full rounded-full" style={{ width: '75%' }}></div>
+                </div>
+                <span className="text-white font-semibold">7.5/10</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <span className="text-white font-semibold">JAVA</span>
+                <div className="w-full h-5 bg-gray-200 rounded-full">
+                  <div className="bg-[#61dafb] h-full rounded-full" style={{ width: '70%' }}></div>
+                </div>
+                <span className="text-white font-semibold">7/10</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-
-      {/* Bottom Image */}
-     
 
       <style jsx>{`
         .hologram-container {
@@ -159,6 +193,10 @@ export default function Home() {
         .hologram-panel p, .hologram-panel span {
           opacity: 0.8;
           text-align: center;
+        }
+
+        .w-full h-5 {
+          height: 5px;
         }
 
         /* Media Queries for Responsiveness */

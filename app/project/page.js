@@ -7,7 +7,8 @@ const projects = [
   {
     title: "Tomato Plant Disease Detection",
     description: "Developed a web app using MobileNetV3 and TensorFlow to detect tomato plant diseases from images, with real-time weather updates and market price alerts.",
-    githubLink: "https://github.com/aditya00604/tomato-disease-detection"
+    githubLink: "https://github.com/aditya00604/tomato-disease-detection",
+
   },
   {
     title: "SE-Inventory Management System",
@@ -62,21 +63,30 @@ export default function Home() {
             <span className="relative text-6xl font-bold mt-2 pt-2 text-[#61dafb]">
               ditya Kumar Mishra
               <br />
-              <p className="absolute animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-5xl font-bold text-[#f39c12]">
-                Web Developer
+              <p className="absolute animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-3xl md:text-5xl font-bold text-[#f39c12]">
+                 Web Developer
               </p>
             </span>
           </div>
 
           {/* Project Showcase */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <div key={index} className="bg-[#1e1e1e] border border-gray-600 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                <h2 className="text-3xl font-semibold text-[#61dafb]">{project.title}</h2>
-                <p className="mt-4 text-lg text-gray-300">{project.description}</p>
-                <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="inline-block mt-6 bg-[#f39c12] hover:bg-[#e67e22] text-white font-semibold py-2 px-4 rounded-md transition duration-300">
-                  View on GitHub
-                </a>
+                <h2 className="text-2xl sm:text-3xl font-semibold text-[#61dafb]">{project.title}</h2>
+                <p className="mt-4 text-sm sm:text-lg text-gray-300">{project.description}</p>
+
+                {/* Buttons for GitHub and Live Demo */}
+                <div className="mt-6 flex space-x-4">
+                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="bg-[#f39c12] hover:bg-[#e67e22] text-white font-semibold py-2 px-4 rounded-md transition duration-300">
+                    View on GitHub
+                  </a>
+                  {project.liveLink && (
+                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="bg-[#61dafb] hover:bg-[#21a1f1] text-white font-semibold py-2 px-4 rounded-md transition duration-300">
+                      Live Demo
+                    </a>
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -84,17 +94,9 @@ export default function Home() {
       </div>
 
       <style jsx>{`
-        @keyframes typing {
-          from { width: 0; }
-          to { width: 100%; }
-        }
+        
 
-        .animate-typing {
-          white-space: nowrap;
-          overflow: hidden;
-          border-right: 3px solid white;
-          animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
-        }
+        
 
         .grid {
           display: grid;

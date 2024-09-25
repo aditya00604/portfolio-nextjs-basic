@@ -79,7 +79,7 @@ export function FloatingDockDemo() {
     },
   ];
   return (
-    <div className="fixed z-10 bottom-0 left-1/2 transform -translate-x-1/2 w-auto bg-transparent"> 
+    <div className="fixed z-10   left-10 bottom-5 md:left-1/2 transform -translate-x-1/2 -w-auto bg-transparent"> 
       <FloatingDock
          
         items={links} />

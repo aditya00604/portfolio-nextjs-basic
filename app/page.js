@@ -64,7 +64,7 @@ export default function Home() {
         </button></a>
         
         {/* Main Content Container */}
-        <div className="flex flex-col items-start w-[90%] sm:w-[70%] md:w-[50%] text-white px-4 md:px-0">
+        <div className="flex flex-col items-start  sm:w-[70%] md:w-[50%] text-white px-4 md:px-0">
         
           {/* Name Block */}
           <div className="flex flex-row items-start pt-20">
@@ -72,17 +72,17 @@ export default function Home() {
             <span className="relative text-5xl md:text-6xl font-bold mt-1 md:mt-2 md:pt-2 text-[#61dafb]">
               ditya <span className="hidden md:inline "> Kumar </span>Mishra
               <br />
-              <p className="absolute right-0 animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white md:pr-5 text-3xl md:text-5xl font-bold text-[#f39c12]">
-                Web Developer
+              <p className="absolute right-0 animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white  md:pr-5 text-3xl md:text-4xl lg:text-5xl font-bold text-[#f39c12]">
+              Web Developer
               </p>
             </span>
           </div>
       
           <div className="md:hidden block grayscale  relative">
-  <img src="./Adi-transformed.png" alt="Aditya Kumar Mishra" width={450} height={450} className="" />
+  <img src="./Adi-transformed.png" alt="Aditya Kumar Mishra" width={600} height={600} className="" />
   <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black to-transparent opacity-100"></div>
 </div >
-          <div className="relative text-white  text-lg sm:text-xl md:text-2xl md:mt-6 mb-5 sm:mt-10">
+          <div className="relative text-white  text-lg sm:text-xl md:text-2xl md:mt-10 mb-5 sm:mt-10">
           
             <p className="italic animate-fadeIn text-lg sm:text-xl md:text-2xl">
               <span className="text-[#f39c12] font-bold">"Coding is my way of telling stories"</span>. 

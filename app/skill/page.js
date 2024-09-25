@@ -39,13 +39,13 @@ export default function Home() {
             <span className="relative text-5xl md:text-6xl font-bold mt-2 pt-2 text-[#61dafb]">
               ditya Kumar Mishra
               <br />
-              <p className="absolute right-0 animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-3xl md:text-5xl font-bold text-[#f39c12]">
+              <p className="absolute right-0 animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-3xl lg:text-5xl font-bold text-[#f39c12]">
                 Web Developer
               </p>
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-10 text-white text-lg hologram-container ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-10 text-white text-lg hologram-container mt-10 ml-5 mr-5 ">
             
             <div className="hologram-panel">
               

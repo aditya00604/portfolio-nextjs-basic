@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
           {children}
 
           {/* Desktop image */}
-          <div className="hidden md:block fixed bottom-0 left-[-10%] overflow-hidden shadow-lg filter grayscale p-0 m-0">
+          <div className="hidden md:block fixed bottom-0 sm:left-[-50%] md:left-[-50%] lg:left-[-20%] overflow-hidden shadow-lg filter grayscale p-0 m-0">
             <img
               src="./Adi-transformed.png"
               alt="Hero"

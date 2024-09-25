@@ -97,7 +97,7 @@ export default function Home() {
           </div>
           
           {/* Contact Section */}
-          <div className="mt-8 glass-card p-6 md:p-8 rounded-lg backdrop-blur-lg shadow-lg w-full">
+          <div className="mt-12 glass-card p-6 md:p-8 rounded-lg backdrop-blur-lg shadow-lg w-full">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Contact Me</h2>
             <form onSubmit={sendEmail} className="flex flex-col space-y-4 w-full">
               <input

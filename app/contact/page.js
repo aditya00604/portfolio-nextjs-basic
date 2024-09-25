@@ -1,0 +1,177 @@
+'use client';
+import { useEffect, useState } from "react";
+import emailjs from 'emailjs-com'; // For email sending
+import { IconBrandGithub, IconBrandLinkedin, IconBrandTwitter } from '@tabler/icons-react'; // Import Tabler Icons
+
+export default function Home() {
+  // Form state for capturing user input
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [isSent, setIsSent] = useState(false);
+  const [error, setError] = useState(false);
+
+  // Handle form input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({ ...prevData, [name]: value }));
+  };
+
+  // Handle form submission
+  const sendEmail = (e) => {
+    e.preventDefault();
+    
+    emailjs.send('service_hxak5gg', 'template_o683qhw', formData, '4UQNcgdyRQxIoaOgT')
+      .then((response) => {
+        setIsSent(true);
+        setError(false);
+      }, (error) => {
+        setIsSent(false);
+        setError(true);
+      });
+  };
+
+  useEffect(() => {
+    // Dynamically load particles.js
+    const scriptParticles = document.createElement('script');
+    scriptParticles.src = "https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js";
+    
+    // Dynamically load Stats.js
+    const scriptStats = document.createElement('script');
+    scriptStats.src = "https://cdnjs.cloudflare.com/ajax/libs/stats.js/r17/Stats.min.js"; 
+
+    scriptParticles.onload = () => {
+      // Initialize particles.js
+      particlesJS("particles-js", {
+        "particles": {
+          "number": { "value": 8, "density": { "enable": false, "value_area": 1683.58 } },
+          "color": { "value": "#ffffff" },
+          "shape": { "type": "edge", "stroke": { "width": 1, "color": "#1e1e1e" } },
+          "opacity": { "value": 0.3, "random": true },
+          "size": { "value": 90, "random": false },
+          "line_linked": { "enable": true, "distance": 785.67, "color": "#ffffff", "opacity": 0.53, "width": 2.4 },
+          "move": { "enable": true, "speed": 1, "out_mode": "bounce" }
+        },
+        "interactivity": { "detect_on": "canvas", "events": { "resize": true } },
+        "retina_detect": true
+      });
+
+      // Initialize Stats.js after particles.js is loaded
+      scriptStats.onload = () => {
+        if (typeof Stats !== 'undefined') {
+          var stats = new Stats();
+          stats.setMode(0); 
+          stats.domElement.style.position = 'absolute';
+          stats.domElement.style.left = '0px';
+          stats.domElement.style.top = '0px';
+          document.body.appendChild(stats.domElement);
+
+          const count_particles = document.querySelector('.js-count-particles');
+          const update = () => {
+            stats.begin();
+            stats.end();
+            if (window.pJSDom[0]?.pJS.particles?.array) {
+              count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+            }
+            requestAnimationFrame(update);
+          };
+          requestAnimationFrame(update);
+        } else {
+          console.error("Stats is not available.");
+        }
+      };
+      document.body.appendChild(scriptStats); 
+    };
+
+    document.body.appendChild(scriptParticles); 
+  }, []);
+
+  return (
+    <>
+      <div id="particles-js" className="fixed inset-0 z-0 h-full"></div> 
+      <div className="z-10 flex flex-col items-end justify-center w-full h-full mt-5">
+        <div className="flex flex-col text-white items-center w-[50%]">
+          <div className="flex flex-row items-center pt-20">
+            <span className="text-9xl font-bold text-[#61dafb]">A</span>
+            <span className="relative text-6xl font-bold  text-[#61dafb]">
+              ditya Kumar Mishra
+              <br />
+              <p className="absolute right-0 animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-5xl font-bold text-[#f39c12]">
+                Web Developer
+              </p>
+            </span>
+          </div>
+          
+          {/* Contact Section */}
+          <div className="mt-10 glass-card p-8 rounded-lg backdrop-blur-lg shadow-lg">
+            <h2 className="text-3xl font-bold text-white mb-4">Contact Me</h2>
+            <form onSubmit={sendEmail} className="flex flex-col space-y-4 w-full">
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Your Name"
+                className="p-4 rounded bg-black/70 text-white border border-[#f39c12] hover:border-[#e67e22] transition-all duration-200"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Your Email"
+                className="p-4 rounded bg-black/70 text-white border border-[#f39c12] hover:border-[#e67e22] transition-all duration-200"
+                required
+              />
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Your Message"
+                rows="4"
+                className="p-4 rounded bg-black/70 text-white border border-[#f39c12] hover:border-[#e67e22] transition-all duration-200"
+                required
+              />
+              <button type="submit" className="bg-[#f39c12] hover:bg-[#e67e22] text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-200">
+                Send Message
+              </button>
+
+              {/* Confirmation Message */}
+              {isSent && <p className="text-green-500">Message Sent Successfully!</p>}
+              {error && <p className="text-red-500">Failed to send message. Try again.</p>}
+            </form>
+          </div>
+
+          {/* Social Media Links */}
+          <div className="flex space-x-6 mt-10">
+            <a href="https://github.com/aditya00604" target="_blank" rel="noopener noreferrer">
+              <IconBrandGithub size={48} stroke={1.5} className="text-white hover:text-[#f39c12] transition-all duration-200" />
+            </a>
+            <a href="https://www.linkedin.com/in/aditya-mishra-692791240" target="_blank" rel="noopener noreferrer">
+              <IconBrandLinkedin size={48} stroke={1.5} className="text-white hover:text-[#f39c12] transition-all duration-200" />
+            </a>
+            <a href="https://x.com/KumarAdity36279" target="_blank" rel="noopener noreferrer">
+              <IconBrandTwitter size={48} stroke={1.5} className="text-white hover:text-[#f39c12] transition-all duration-200" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        .glass-card {
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+          backdrop-filter: blur(8px);
+        }
+
+        input, textarea {
+          outline: none;
+        }
+
+        button:hover {
+          box-shadow: 0px 10px 15px rgba(243, 156, 18, 0.4);
+        }
+      `}</style>
+    </>
+  );
+}

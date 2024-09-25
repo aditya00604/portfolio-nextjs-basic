@@ -31,8 +31,8 @@ export default function Home() {
 
   return (
     <>
-      <div id="particles-js" className="fixed inset-0 z-0 h-full"></div>
-      <div className="z-10 flex flex-col items-end justify-center w-full h-full mt-5">
+      <div id="particles-js" className="fixed inset-0 z-0 min-h-full"></div>
+      <div className="z-10 flex flex-col items-end justify-center w-full min-h-full  mt-5">
         <div className="flex flex-col text-white items-start w-full md:w-[50%]">
           <div className="flex  md:flex-row items-start pt-10 md:pt-20">
             <span className="text-7xl md:text-9xl font-bold text-[#61dafb]">A</span>
@@ -46,7 +46,7 @@ export default function Home() {
           </div>
 
           {/* Futuristic 3D Panels */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-10 text-white text-lg hologram-container">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-10 text-white text-lg hologram-container bg-black">
             {/* Languages */}
             <div className="hologram-panel">
               <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">

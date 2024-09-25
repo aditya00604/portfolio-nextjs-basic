@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         <Image src="/Adi-transformed.png" alt="Hero" width={1100} height={1100} />
       </div> */}
        <div className="hidden md:block fixed bottom-0 left-[-10%] overflow-hidden shadow-lg filter grayscale p-0 m-0">
-        <Image src="/Adi-transformed.png" alt="Hero" width={1100} height={1100} />
+        <img src="./Adi-transformed.png" alt="Hero" width={1100} height={1100} />
       </div>
       <FloatingDockDemo />
     </main>
